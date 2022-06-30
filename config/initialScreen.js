@@ -1,7 +1,5 @@
-
+import { colores, css, textConsola } from "../models.js/css.js";
 import {logo} from "../models.js/logo.js";
-/* array para almacenar colores */
-const color =["#feff99","#ff9a99","#99ff9a","#ff99cb","#99ffcd"] 
 
 /* Promesa que presenta la pantalla de carga del juego */
 export const LoadGame = await new Promise (resolve=>{
@@ -9,7 +7,7 @@ export const LoadGame = await new Promise (resolve=>{
   let parcial = "."  
   const tiempo = setInterval(() => {
         console.clear()
-        console.log(`%cLoading ${parcial}`, `color: ${color[modColor]}`)    
+        console.log(`%cLoading ${parcial}`, `color: ${css.textColor[modColor]}; font-style: italic`)    
         parcial = parcial + "."
         modColor++
        }, 500);
@@ -18,13 +16,14 @@ export const LoadGame = await new Promise (resolve=>{
                 clearInterval(tiempo)
                 resolve(true)
                 console.clear() 
-        },3000);
+        },2000);
     
 })
 
 console.clear()
-console.log(`%c${logo}`,"color: #99ffcd" )
-console.log("%c                               -- Bienvenidos al Juego --\n",`color: ${color[2]}`)
-
+textConsola(logo)
+textConsola("\t\t\t\t-- Bienvenidos al Juego --\n")
 export default LoadGame
+
+
 
