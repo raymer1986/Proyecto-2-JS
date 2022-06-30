@@ -19,7 +19,7 @@ export function validateName(callback){
     dataUser[0].name = name
    confirmed()
 }
-// Funcion que confirma si el usuario esta de acuerdo con el nombre elegido
+// Funcion que confirma si el usuario esta de acuerdo con el nombre que elegido
 export function confirmed (){
     let regex2,confirmed =""
     do {
