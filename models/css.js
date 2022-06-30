@@ -1,4 +1,6 @@
-import {mainMenu, Menu } from "./menu.js"
+import { mainMenu,config,load } from "../MainMenu.js"
+
+
 export const css= {
     textColor: ["red","blue","orange","yellow","pink"],
     textSpeed: ["2000","3000","4000"],
@@ -32,7 +34,7 @@ export function showColors(colores){
     }   
     console.clear()
     mainMenu.showMenu()
-    mainMenu.selectOpt()
+    mainMenu.selectOpt(mainMenu,config,load)
       
 } 
 export function textConsola(arg){

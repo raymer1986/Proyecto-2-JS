@@ -1,6 +1,7 @@
 import { LoadGame } from "./config/initialScreen.js";
-import { validateName, confirmed } from "./models.js/users.js";
-import { mainMenu, Menu } from "./models.js/menu.js";
+import { validateName, confirmed } from "./models/users.js";
+import { config, mainMenu,load } from "./MainMenu.js";
+
 
 async function initGame(){
     //pantalla de carga del juego
@@ -13,7 +14,7 @@ async function initGame(){
         
         //Menú y Selección de opciones     
         mainMenu.showMenu()
-        mainMenu.selectOpt()
+        mainMenu.selectOpt(mainMenu,config,load)
 
 
 
