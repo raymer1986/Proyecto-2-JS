@@ -15,23 +15,7 @@ export function showColors(colores){
     console.log(`%c${i+1}.- ${css.textColor[i]}`,`color: ${css.textColor[i]}`)
 } 
     colorSelected = prompt("Seleccione el color :")
-    switch (colorSelected) {
-        case "1":
-            colorSelected = css.textColor[0]
-            break;
-        case "2":
-            colorSelected = css.textColor[1]
-            break;
-        case "3":
-            colorSelected = css.textColor[2]
-            break;
-        case "4":
-            colorSelected = css.textColor[3]
-            break;
-        case "5":
-            colorSelected = css.textColor[4]
-            break;
-    }   
+    colorSelected = css.textColor[colorSelected-1]  
     console.clear()
     mainMenu.showMenu()
     mainMenu.selectOpt(mainMenu,config,load)
