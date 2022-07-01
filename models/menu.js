@@ -1,4 +1,5 @@
 import {Elfo}from "../characters/character.js"
+import { Escenarios, password } from "../MainMenu.js"
 import { textConsola, showColors } from "./css.js"
 
 //import { dataUser, userInfo } from "../config/dataUser.js"
@@ -31,23 +32,32 @@ export class Menu{
             }
             
             if (option==="2"){
-                do{
-                
-                console.clear()
-                opcion2.showMenu()
-                option = prompt(">>")
-                 showColors()
-                } 
-                while (option > this.opt.length);
-                }    
+                do{ 
+                    console.clear()
+                    opcion2.showMenu()
+                    option = prompt(">>")
+                    showColors()
+                }while (option > this.opt.length);
+            }    
             
                 if (option==="3"){
                     do{
-                     
                     console.clear()
                     opcion3.showMenu()
                     option = prompt(">>")
-                  
+                        switch (option) {
+                            case "1":
+                                console.clear()
+                                Escenarios.showMenu()
+                                break;
+                            case "2":
+                                console.clear()
+                                password.showMenu()
+                                break;
+                            default:
+                                opcion3.showMenu()
+                                break;
+                        }
                     } 
                     while (option > this.opt.length);
                     }
