@@ -29,8 +29,10 @@ return this.vida += 20
 
 }
 
-export const elfo = new character (100, 10, 10, ["pocion","pocion"],"Legolas")
+export const Elfo = new character (100, 12, 8, ["pocion","pocion","pocion"],"Legolas")
+export const Enano = new character (200, 8, 12,  ["pocion"],"Grim")
+export const Humano = new character (150, 10, 10,  ["pocion","pocion"],"Deckar")
 
+export const nombres = ["Elfo","Enano","Humano"] 
 
-
-console.log(elfo.inventario)
+export default character

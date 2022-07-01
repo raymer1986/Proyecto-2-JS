@@ -1,15 +1,23 @@
+import { mainMenu } from "../MainMenu.js"
 import Menu from "../models/menu.js"
+import { mostrar } from "../Mostrardefault.js"
+import {character,Elfo,Enano,Humano,nombres} from "./character.js"
 
 
 
-const Elfo = new Menu ("Legolas\n",["Stats: vida 20 defensa 20 ataque 20"])
-const Enano = new Menu ("Grim\n",["Stats: vida 20 defensa 20 ataque 20"])
-const Humano = new Menu ("Carlos\n",["Stats: vida 20 defensa 20 ataque 20"])
+// Menu con minuscula y Personaje con Mayuscula
 
-const menuChars = new Menu ("Seleccion de personajes\n",["Elfo","Enano","Humano"])
-menuChars.showMenu()
-menuChars.selectOpt(Elfo,Enano,Humano)
+// export const elfo = new Menu (Elfo.nombre,["Vida: "+Elfo.vida,"Defensa: "+Elfo.defensa,"Ataque: "+Elfo.ataque])
+// export const enano = new Menu (Enano.nombre,["Vida: "+Enano.vida,"Defensa: "+Enano.defensa,"Ataque: "+Enano.ataque])
+// export const humano = new Menu (Humano.nombre,["Vida: "+Humano.vida,"Defensa: "+Humano.defensa,"Ataque: "+Humano.ataque])
 
-Elfo.showMenu()
-Enano.showMenu()
-Humano.showMenu()
+
+
+mostrar("Personajes",nombres)
+
+
+
+
+// elfo.showMenu()
+// enano.showMenu()
+// humano.showMenu()

@@ -1,4 +1,6 @@
+import {Elfo}from "../characters/character.js"
 import { textConsola, showColors } from "./css.js"
+
 //import { dataUser, userInfo } from "../config/dataUser.js"
 
 export class Menu{
@@ -20,10 +22,10 @@ export class Menu{
         if (option==="1"){
             do{
             let option 
-             console.clear()
+            console.clear()
             opcion1.showMenu()
             option = prompt(">>")
-             showColors()
+           
             } 
             while (option > this.opt.length);
             }
@@ -45,7 +47,7 @@ export class Menu{
                     console.clear()
                     opcion3.showMenu()
                     option = prompt(">>")
-                     showColors()
+                  
                     } 
                     while (option > this.opt.length);
                     }
