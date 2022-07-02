@@ -1,7 +1,8 @@
+
 import { mainMenu } from "../MainMenu.js"
 import Menu from "../models/menu.js"
-import { mostrar } from "../Mostrardefault.js"
-import {character,Elfo,Enano,Humano,nombres} from "./character.js"
+
+import {character,Elfo,Enano,Humano} from "./character.js"
 
 
 
@@ -13,11 +14,48 @@ import {character,Elfo,Enano,Humano,nombres} from "./character.js"
 
 
 
-mostrar("Personajes",nombres)
 
 
+let condition; 
 
+export    function elegirchar() 
+   {
+        
+    
+    do {
+      
+    let option = prompt(">>")
+  
+     switch (option) {
+        case "1":
+            console.clear()
+            Elfo.showstats
+            condition =false
+            
+            break;
+            
+            case "2":
+                console.clear()
+                Enano.showstats
+                condition =false
+                
+             break;
+             
+        case "3":
+                console.clear()
+                Humano.showstats
+                condition =false
+                
+                break;
+        
+          
+       
+            default:
+                option = prompt("respuesta incorrecta, elija nuevamente")
+                condition = true
+                break;
+            }
+        } while (condition); 
+    
+}
 
-// elfo.showMenu()
-// enano.showMenu()
-// humano.showMenu()
