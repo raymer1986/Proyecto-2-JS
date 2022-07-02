@@ -1,8 +1,12 @@
 import {Elfo}from "../characters/character.js"
-import { Escenarios, password } from "../MainMenu.js"
+import { elegirchar } from "../characters/menuchars.js";
+import { Escenarios, mainMenu, password } from "../MainMenu.js"
 import { textConsola, showColors } from "./css.js"
 
 //import { dataUser, userInfo } from "../config/dataUser.js"
+
+
+let condition;
 
 export class Menu{
     constructor(title, opt){
@@ -17,52 +21,61 @@ export class Menu{
         } 
     }
     // Selecciona el Menu y se Instancia la clase
-    selectOpt(opcion1,opcion2,opcion3){
+     selectOpt(opcion1,opcion2,opcion3,){
         
-        let option = prompt(">>")
-        if (option==="1"){
-            do{
-            let option 
-            console.clear()
-            opcion1.showMenu()
-            option = prompt(">>")
-           
-            } 
-            while (option > this.opt.length);
-            }
             
-            if (option==="2"){
-                do{ 
+      
+        do {
+        
+      
+        let option = prompt(">>")
+      
+         switch (option) {
+            case "1":
+                console.clear()
+                opcion1.showMenu()
+                elegirchar()
+                condition =false
+                
+                break;
+                
+                case "2":
                     console.clear()
                     opcion2.showMenu()
                     option = prompt(">>")
-                    showColors()
-                }while (option > this.opt.length);
-            }    
-            
-                if (option==="3"){
-                    do{
+                    if(option = 1){
+                        showColors()
+                    }
+                    condition =false
+                
+                 break;
+                 
+            case "3":
                     console.clear()
                     opcion3.showMenu()
                     option = prompt(">>")
-                        switch (option) {
-                            case "1":
-                                console.clear()
-                                Escenarios.showMenu()
-                                break;
-                            case "2":
-                                console.clear()
-                                password.showMenu()
-                                break;
-                            default:
-                                opcion3.showMenu()
-                                break;
-                        }
-                    } 
-                    while (option > this.opt.length);
-                    }
-
-        }
-    }
+                    condition =false
+                   
+                    break;
+            
+            case "4":
+                    console.clear()
+                    opcion3.showMenu()
+                    option = prompt(">>")
+                    condition =false
+                
+                      break;        
+           
+                default:
+                    option = prompt("respuesta incorrecta, elija nuevamente")
+                    condition = true
+                    break;
+                }
+            } while (condition); 
+                
+                  
+        
+     }
+}
 
 export default Menu

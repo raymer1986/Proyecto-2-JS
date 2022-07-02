@@ -1,4 +1,4 @@
-import { mainMenu,config,load } from "../MainMenu.js"
+import { mainMenu,config,load,Personajes } from "../MainMenu.js"
 
 
 export const css= {
@@ -18,7 +18,7 @@ export function showColors(colores){
     colorSelected = css.textColor[colorSelected-1]  
     console.clear()
     mainMenu.showMenu()
-    mainMenu.selectOpt(mainMenu,config,load)
+    mainMenu.selectOpt(Personajes,config,load)
       
 } 
 export function textConsola(arg){

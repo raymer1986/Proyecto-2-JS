@@ -12,7 +12,7 @@ export class character {
     
 get showstats(){
 
-    console.log(this.nombre+":"+"vida "+this.vida+" ataque "+this.ataque +" defensa " + this.defensa)
+    console.log(this.nombre+":"+" \nvida "+this.vida+" \nataque "+this.ataque +" \ndefensa " + this.defensa)
 }
 
 get showInv(){
@@ -22,17 +22,23 @@ get showInv(){
 get atacar(){
     return this.ataque+Math.round(Math.random()*6)
    }
-get curarse(){this.inventario.splice(1,1)
-return this.vida += 20
-   
+get curarse(){this.inventario.splice(0,1)
+if (this.inventario.length===0) {
+    "No tienes mas pociones"
+    
+}
+else {
+    console.log ("haz tomado una posion")
+    return this.vida += 20
+}   
   }
 
 }
 
-export const Elfo = new character (100, 12, 8, ["pocion","pocion","pocion"],"Legolas")
+export const Elfo = new character (100, 12, 10, ["pocion","pocion","pocion"],"Legolas")
 export const Enano = new character (200, 8, 12,  ["pocion"],"Grim")
 export const Humano = new character (150, 10, 10,  ["pocion","pocion"],"Deckar")
 
-export const nombres = ["Elfo","Enano","Humano"] 
+
 
 export default character
