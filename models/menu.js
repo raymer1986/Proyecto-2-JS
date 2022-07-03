@@ -1,8 +1,10 @@
 import {Elfo}from "../characters/character.js"
+import { elegirEscenario } from "../characters/escenario.js";
 import { elegirchar } from "../characters/menuchars.js";
-import { Escenarios, mainMenu, password } from "../MainMenu.js"
-import { textConsola, showColors } from "./css.js"
-
+import { codigo } from "../config/codigos.js";
+//import { escenarios, mainMenu, password } from "../MainMenu.js"
+import { textConsola, showColors,gameSpeed } from "./css.js"
+ 
 //import { dataUser, userInfo } from "../config/dataUser.js"
 
 
@@ -21,7 +23,7 @@ export class Menu{
         } 
     }
     // Selecciona el Menu y se Instancia la clase
-     selectOpt(opcion1,opcion2,opcion3,){
+     selectOpt(opcion1,opcion2,opcion3){
         
             
       
@@ -32,7 +34,9 @@ export class Menu{
       
          switch (option) {
             case "1":
+                //primero se muestra el escenario a jugar
                 console.clear()
+                elegirEscenario()   
                 opcion1.showMenu()
                 elegirchar()
                 condition =false
@@ -43,30 +47,25 @@ export class Menu{
                     console.clear()
                     opcion2.showMenu()
                     option = prompt(">>")
-                    if(option = 1){
+                    if(option === "1"){
                         showColors()
                     }
+                    if(option === "2"){
+                        gameSpeed()
+                    }
+
                     condition =false
                 
                  break;
                  
             case "3":
                     console.clear()
-                    opcion3.showMenu()
-                    option = prompt(">>")
+                    codigo()
                     condition =false
                    
                     break;
             
-            case "4":
-                    console.clear()
-                    opcion3.showMenu()
-                    option = prompt(">>")
-                    condition =false
-                
-                      break;        
-           
-                default:
+                    default:
                     option = prompt("respuesta incorrecta, elija nuevamente")
                     condition = true
                     break;

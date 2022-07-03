@@ -1,6 +1,6 @@
 import { LoadGame } from "./config/initialScreen.js";
 import { validateName, confirmed } from "./models/users.js";
-import { config, mainMenu,load, Personajes } from "./MainMenu.js";
+import { config, mainMenu, Personajes, password, escenarios } from "./MainMenu.js";
 import { showColors } from "./models/css.js";
 import { elegirchar } from "./characters/menuchars.js";
 //import { menuChars, humano,elfo,enano} from "./characters/menuchars.js";
@@ -19,7 +19,7 @@ async function initGame(){
     //Menú y Selección de opciones     
     
     mainMenu.showMenu()
-    mainMenu.selectOpt(Personajes,config,load)
+    mainMenu.selectOpt(Personajes,config,password)
 
 
  

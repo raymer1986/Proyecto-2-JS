@@ -1,7 +1,8 @@
 
+import { css} from "../models/css.js";
 import {character,Elfo,Enano}from "./character.js"
 
- function combat(propio,enemigo) {
+export function combat(propio,enemigo) {
    new Promise((resolve) =>{
      let intervalo = setInterval(() => {
     let decicion = Math.round(Math.random()*6)
@@ -32,11 +33,9 @@ import {character,Elfo,Enano}from "./character.js"
         resolve(console.log("%c Fin de la pelea","color:orange"))
    ; 
     }
-}, 1000);
+}, css.speedSelected);
 
     
 })
 
 }
-
-
