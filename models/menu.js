@@ -25,14 +25,11 @@ export class Menu{
     // Selecciona el Menu y se Instancia la clase
      selectOpt(opcion1,opcion2,opcion3){
         
-            
+        let option = prompt(">>")        
       
         do {
-        
-      
-        let option = prompt(">>")
-      
-         switch (option) {
+         
+            switch (option) {
             case "1":
                 //primero se muestra el escenario a jugar
                 console.clear()
@@ -45,17 +42,25 @@ export class Menu{
                 
                 case "2":
                     console.clear()
+                    condition=false
                     opcion2.showMenu()
                     option = prompt(">>")
-                    if(option === "1"){
-                        showColors()
-                    }
-                    if(option === "2"){
-                        gameSpeed()
-                    }
-
-                    condition =false
-                
+                    do{
+                        switch (option) {
+                            case "1":
+                                showColors()
+                                break;
+                            case "2":
+                                gameSpeed()
+                                break;
+                        
+                            default:
+                            option = prompt("- Opcion Invalida -")
+                            condition = true
+                                break;
+                        }
+                    }while(condition)
+            
                  break;
                  
             case "3":
@@ -66,14 +71,12 @@ export class Menu{
                     break;
             
                     default:
-                    option = prompt("respuesta incorrecta, elija nuevamente")
+                    option = prompt("- Opcion Invalida -")
                     condition = true
                     break;
                 }
             } while (condition); 
-                
-                  
-        
+
      }
 }
 
