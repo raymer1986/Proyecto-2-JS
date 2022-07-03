@@ -18,7 +18,7 @@ const versus = [Elfo,Enano, Humano]
         
         dataUser[0].personajeOculto = codigoValido
 
-        const Mago  = new character (100, 13, 11, ["pocion","pocion","pocion"],"Saruman")
+        const Mago  = new character (150, 13, 11, ["pocion","pocion","pocion"],"Saruman")
 
         console.log(`Codigo Valido\n\nHas desbloquedo a ${Mago.nombre}\n`)
         Mago.showstats
