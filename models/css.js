@@ -37,5 +37,5 @@ export function gameSpeed(){
     css.speedSelected = css.textSpeed[speed-1]  
     console.clear()
     mainMenu.showMenu()
-    mainMenu.selectOpt(Personajes,config,password,escenarios)
+    mainMenu.selectOpt(Personajes,config,password)
 }

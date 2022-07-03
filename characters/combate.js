@@ -1,10 +1,14 @@
 
+import { dataUser } from "../config/dataUser.js";
+import { mainMenu,config, Personajes, password } from "../MainMenu.js";
 import { css} from "../models/css.js";
-import {character,Elfo,Enano}from "./character.js"
+import {character,Elfo,Enano, Humano}from "./character.js"
 
-export function combat(propio,enemigo) {
-   new Promise((resolve) =>{
+
+export async function combat(propio,enemigo) {
+ const promesa =new Promise((resolve) =>{
      let intervalo = setInterval(() => {
+      
     let decicion = Math.round(Math.random()*6)
   if (decicion > 5){
     propio.curarse
@@ -13,29 +17,45 @@ export function combat(propio,enemigo) {
   else {
       if(propio.atacar>enemigo.atacar){
         enemigo.vida-=propio.atacar+enemigo.defensa
-        console.log(`%c Tu vida:\n${propio.vida}`,`color:blue`)
-        console.log(`%c Rival:\n${enemigo.vida}`,`color:red`)
+       
+     if (enemigo.vida<=0){
+          enemigo.vida=0
+          dataUser[0].victorias +=1
+          console.log("Victoria!!!")
+
+     }
+        console.log(`%c Tu vida: ${propio.vida}`,`color:blue`)
+        console.log(`%c Rival: ${enemigo.vida}`,`color:red`)
 
    }
    
-    
 
     else if(enemigo.atacar>propio.atacar ){
      propio.vida-=enemigo.atacar+propio.defensa
-     
-     console.log(`%c Tu vida:\n${propio.vida}`,`color:blue`)
-     console.log(`%c Rival:\n${enemigo.vida}`,`color:red`)
+
+     if (propio.vida<=0){
+          propio.vida=0
+          dataUser[0].derrotas += 1
+          console.log("Haz sido derrotado")
+        
+     }
+  
+     console.log(`%c Tu vida: ${propio.vida}`,`color:blue`)
+     console.log(`%c Rival: ${enemigo.vida}`,`color:red`)
     }
     
   }
+  
     if(propio.vida<=0 || enemigo.vida <= 0){
         clearInterval(intervalo)
         resolve(console.log("%c Fin de la pelea","color:orange"))
-   ; 
+        
     }
 }, css.speedSelected);
-
-    
-})
-
+      
+}).then(() => {
+  console.log(dataUser[0])
+  mainMenu.showMenu()
+  mainMenu.selectOpt(Personajes,config,password)
+});
 }
