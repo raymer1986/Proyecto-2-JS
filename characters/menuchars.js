@@ -1,27 +1,19 @@
 
+import { codigo } from "../config/codigos.js";
 import { mainMenu } from "../MainMenu.js"
 import Menu from "../models/menu.js"
-
 import {character,Elfo,Enano,Humano} from "./character.js"
+import { combat } from "./combate.js";
 import { elegirEscenario } from "./escenario.js";
 
 
-
-// Menu con minuscula y Personaje con Mayuscula
-
-// export const elfo = new Menu (Elfo.nombre,["Vida: "+Elfo.vida,"Defensa: "+Elfo.defensa,"Ataque: "+Elfo.ataque])
-// export const enano = new Menu (Enano.nombre,["Vida: "+Enano.vida,"Defensa: "+Enano.defensa,"Ataque: "+Enano.ataque])
-// export const humano = new Menu (Humano.nombre,["Vida: "+Humano.vida,"Defensa: "+Humano.defensa,"Ataque: "+Humano.ataque])
+let condition;
 
 
-
-
-
-let condition; 
-
-export function elegirchar() 
-    
+export function elegirchar()
    {
+    const versus = [Elfo,Enano, Humano]
+    const aleatorio = Math.floor(Math.random() * (Math.floor(0) - Math.ceil(2) * -1)) 
     
     do {  
       
@@ -32,6 +24,7 @@ export function elegirchar()
             console.clear()
             Elfo.showstats
             condition =false
+            combat(Elfo,versus[aleatorio])
             
             break;
             
@@ -39,13 +32,14 @@ export function elegirchar()
                 console.clear()
                 Enano.showstats
                 condition =false
-                
+                combat(Enano,versus[aleatorio])
              break;
              
         case "3":
                 console.clear()
                 Humano.showstats
                 condition =false
+                combat(Humano,versus[aleatorio])
                 break;
 
             default:
@@ -53,7 +47,8 @@ export function elegirchar()
                 condition = true
                 break;
             }
-        } while (condition); 
-    
+
+        } while (condition);
+       
 }
 

@@ -1,13 +1,15 @@
 import character, { Elfo, Enano, Humano } from "../characters/character.js"
 import { combat } from "../characters/combate.js"
+import { elegirEscenario } from "../characters/escenario.js"
 import { mainMenu,Personajes,config,password} from "../MainMenu.js"
 import { textConsola } from "../models/css.js"
 import { dataUser } from "./dataUser.js"
 
-const code= ["erebus", "raymer"]
-const versus = [Elfo,Enano, Humano]
-export function codigo(){
 
+const code= ["erebus", "raymer"]
+
+export function codigo(){
+const versus = [Elfo,Enano, Humano]
     let codigo = prompt("Ingrese un codigo y Obten Personaje Mejorado :")
 
     const codigoValido = code.find( elemento=> elemento===codigo )
@@ -16,7 +18,7 @@ export function codigo(){
         
         dataUser[0].personajeOculto = codigoValido
 
-        const Mago  = new character (100, 18, 16, ["pocion","pocion","pocion"],"Saruman")
+        const Mago  = new character (100, 13, 11, ["pocion","pocion","pocion"],"Saruman")
 
         console.log(`Codigo Valido\n\nHas desbloquedo a ${Mago.nombre}\n`)
         Mago.showstats
@@ -29,7 +31,8 @@ export function codigo(){
                 console.log("Juguemos")
                 const aleatorio = Math.floor(Math.random() * (Math.floor(0) - Math.ceil(2) * -1));
                 console.log(aleatorio)
-               combat(Mago,versus[aleatorio])
+                elegirEscenario()
+                combat(Mago,versus[aleatorio])
 
             }else if(option==="n" ||option==="N"){
                 condition=false

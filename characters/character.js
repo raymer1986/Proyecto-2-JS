@@ -35,10 +35,7 @@ else {
 
 }
 
-export const Elfo = new character (100, 12, 10, ["pocion","pocion","pocion"],"Legolas")
+export const Elfo = new character (100, 11, 10, ["pocion","pocion","pocion"],"Legolas")
 export const Enano = new character (200, 8, 12,  ["pocion"],"Grim")
 export const Humano = new character (150, 10, 10,  ["pocion","pocion"],"Deckar")
-
-
-
 export default character
