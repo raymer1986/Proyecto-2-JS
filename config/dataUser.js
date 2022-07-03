@@ -1,5 +1,8 @@
 export const dataUser= [{
-    name:""
+    name:"",
+    escenario:"",
+    victorias:"",
+    personajeOculto:""
 }]
 
 

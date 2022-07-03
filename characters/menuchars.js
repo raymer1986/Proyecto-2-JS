@@ -3,6 +3,7 @@ import { mainMenu } from "../MainMenu.js"
 import Menu from "../models/menu.js"
 
 import {character,Elfo,Enano,Humano} from "./character.js"
+import { elegirEscenario } from "./escenario.js";
 
 
 
@@ -18,11 +19,11 @@ import {character,Elfo,Enano,Humano} from "./character.js"
 
 let condition; 
 
-export    function elegirchar() 
-   {
-        
+export function elegirchar() 
     
-    do {
+   {
+    
+    do {  
       
     let option = prompt(">>")
   
@@ -34,7 +35,7 @@ export    function elegirchar()
             
             break;
             
-            case "2":
+        case "2":
                 console.clear()
                 Enano.showstats
                 condition =false
@@ -45,11 +46,8 @@ export    function elegirchar()
                 console.clear()
                 Humano.showstats
                 condition =false
-                
                 break;
-        
-          
-       
+
             default:
                 option = prompt("respuesta incorrecta, elija nuevamente")
                 condition = true
