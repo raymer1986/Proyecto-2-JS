@@ -1,8 +1,12 @@
 
-import { dataUser } from "../config/dataUser.js";
+import {Menu} from "../models/menu.js"
+import { dataUser,statsPlayer } from "../config/dataUser.js";
 import { mainMenu,config, Personajes, password } from "../MainMenu.js";
 import { css} from "../models/css.js";
 import {character,Elfo,Enano, Humano}from "./character.js"
+
+
+
 
 
 export async function combat(propio,enemigo) {
@@ -50,14 +54,13 @@ export async function combat(propio,enemigo) {
     if(propio.vida<=0 || enemigo.vida <= 0){
         clearInterval(intervalo)
         resolve(console.log("%c Fin de la pelea","color:orange"))
-        propio.vida = 150
-        enemigo.vida = 150
-        
+         propio.vida = 150
+         enemigo.vida = 150
     }
 }, css.speedSelected);
       
 }).then(() => {
-  console.log(dataUser[0])
+  statsPlayer()
   mainMenu.showMenu()
   mainMenu.selectOpt(Personajes,config,password)
 });

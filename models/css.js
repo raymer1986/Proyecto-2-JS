@@ -7,19 +7,21 @@ export const css= {
     colorSelected: "",
     speedSelected:1000
 }
-let colorSelected
+let colorSelected,condition
 
 export let colores = css.textColor[colorSelected] 
 
 export function showColors(colores){
     console.clear()
     textConsola("Colores disponibles\n")
+    
     for (let i = 0; i < css.textColor.length; i++) {
-    console.log(`%c${i+1}.- ${css.textColor[i]}`,`color: ${css.textColor[i]}`)
-} 
+        console.log(`%c${i+1}.- ${css.textColor[i]}`,`color: ${css.textColor[i]}`)
+    } 
     colorSelected = prompt("Seleccione el color :")
-    colorSelected = css.textColor[colorSelected-1]  
-    console.clear()
+    
+    colorSelected = css.textColor[colorSelected-1]
+    console.clear() 
     mainMenu.showMenu()
     mainMenu.selectOpt(Personajes,config,password,escenarios)
       

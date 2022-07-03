@@ -14,10 +14,8 @@ export function elegirchar()
    {
     const versus = [Elfo,Enano, Humano]
     const aleatorio = Math.floor(Math.random() * (Math.floor(0) - Math.ceil(2) * -1)) 
-    
+    let option = prompt(">>")  
     do {  
-      
-    let option = prompt(">>")
   
      switch (option) {
         case "1":
@@ -43,7 +41,7 @@ export function elegirchar()
                 break;
 
             default:
-                option = prompt("respuesta incorrecta, elija nuevamente")
+                option = prompt("Opcion invalida : ")
                 condition = true
                 break;
             }

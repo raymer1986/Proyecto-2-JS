@@ -32,6 +32,9 @@ else {
     return this.vida += 20
 }   
   }
+get restart(){
+    return this.vida = vida
+}
 
 }
 
