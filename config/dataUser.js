@@ -1,8 +1,8 @@
 export const dataUser= [{
     name:"",
     escenario:"",
-    victorias:"",
-    derrotas:"",
+    victorias:parseInt("0"),
+    derrotas:parseInt("0"),
     personajeOculto:""
 }]
 
