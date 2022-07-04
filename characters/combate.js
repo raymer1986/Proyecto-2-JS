@@ -43,13 +43,14 @@ export async function combat(propio,enemigo) {
 
      if (propio.vida<=0){
           propio.vida=0
-          dataUser[0].derrotas += 1
+         dataUser[0].derrotas +=1
           console.log("Haz sido derrotado")
         
      }    
     // console.log(`%c Tu vida: ${propio.vida}`,`color:blue`)
     // console.log(`%c Rival: ${enemigo.vida}`,`color:red`)
    
+
     }
     
   }    
@@ -61,9 +62,8 @@ export async function combat(propio,enemigo) {
         clearInterval(intervalo)
         
         resolve(console.log("%c Fin de la pelea","color:orange"))
-        propio.vida = 150
-        enemigo.vida = 150
-
+         propio.vida = 150
+         enemigo.vida = 150
     }
 
 }, css.speedSelected);
