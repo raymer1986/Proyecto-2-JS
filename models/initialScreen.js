@@ -1,5 +1,5 @@
-import { colores, css, textConsola } from "../models/css.js";
-import {logo} from "../models/logo.js";
+import {css, textConsola } from "../config/css.js";
+import {logo} from "./logo.js";
 
 /* Promesa que presenta la pantalla de carga del juego */
 export const LoadGame = await new Promise (resolve=>{

@@ -1,6 +1,6 @@
-import { dataUser } from "../config/dataUser.js";
-import {escenarios}  from "../MainMenu.js";
-import { textConsola } from "../models/css.js";
+import { dataUser } from "./dataUser.js";
+import {escenarios}  from "../models/MainMenu.js";
+import { textConsola } from "./css.js";
 
 let condition
 export function elegirEscenario(){

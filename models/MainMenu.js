@@ -1,4 +1,4 @@
-import Menu from "./models/menu.js"
+import Menu from "./menu.js"
 
 export const mainMenu = new Menu ("Menú Principal\n",["Iniciar Juego","Configurar","Contraseña"])
 

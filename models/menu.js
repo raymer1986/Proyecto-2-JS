@@ -1,9 +1,7 @@
-import {Elfo}from "../characters/character.js"
-import { elegirEscenario } from "../characters/escenario.js";
+import { elegirEscenario } from "../config/escenario.js";
 import { elegirchar } from "../characters/menuchars.js";
-import { codigo } from "../config/codigos.js";
-//import { escenarios, mainMenu, password } from "../MainMenu.js"
-import { textConsola, showColors,gameSpeed } from "./css.js"
+import { codigo } from "../Controllers/codigos.js";
+import { textConsola, showColors,gameSpeed } from "../config/css.js"
  
 //import { dataUser, userInfo } from "../config/dataUser.js"
 

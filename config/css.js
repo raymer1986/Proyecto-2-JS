@@ -1,4 +1,4 @@
-import { mainMenu,config,Personajes,escenarios, password } from "../MainMenu.js"
+import { mainMenu,config,Personajes,escenarios, password } from "../models/MainMenu.js"
 
 
 export const css= {
