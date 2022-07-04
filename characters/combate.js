@@ -4,16 +4,17 @@ import { dataUser,statsPlayer } from "../config/dataUser.js";
 import { mainMenu,config, Personajes, password } from "../MainMenu.js";
 import { css} from "../models/css.js";
 import {character,Elfo,Enano, Humano}from "./character.js"
-
-
-
+import { vidaRestante,showBar } from "../models/bars.js";
 
 
 export async function combat(propio,enemigo) {
+
  const promesa =new Promise((resolve) =>{
-     let intervalo = setInterval(() => {
-      
+ 
+    let intervalo = setInterval(() => {
+    
     let decicion = Math.round(Math.random()*6)
+    vidaRestante(propio.vida,enemigo.vida)
   if (decicion > 5){
     propio.curarse
   }
@@ -28,9 +29,12 @@ export async function combat(propio,enemigo) {
           console.log("Victoria!!!")
 
      }
-        console.log(`%c Tu vida: ${propio.vida}`,`color:blue`)
-        console.log(`%c Rival: ${enemigo.vida}`,`color:red`)
-
+     
+        //console.log(`%c Tu vida: ${propio.vida}`,`color:blue`)
+        //console.log(`%c Rival: ${enemigo.vida}`,`color:red`)
+        
+        console.log("")
+       
    }
    
 
@@ -42,23 +46,28 @@ export async function combat(propio,enemigo) {
           dataUser[0].derrotas += 1
           console.log("Haz sido derrotado")
         
-     }
-  
-     console.log(`%c Tu vida: ${propio.vida}`,`color:blue`)
-     console.log(`%c Rival: ${enemigo.vida}`,`color:red`)
+     }    
+    // console.log(`%c Tu vida: ${propio.vida}`,`color:blue`)
+    // console.log(`%c Rival: ${enemigo.vida}`,`color:red`)
+   
     }
     
-  }
-  
+  }    
+      //barra de vida 
+        vidaRestante(propio.vida,enemigo.vida)
+    
     if(propio.vida<=0 || enemigo.vida <= 0){
+     
         clearInterval(intervalo)
+        
         resolve(console.log("%c Fin de la pelea","color:orange"))
         propio.vida = 150
         enemigo.vida = 150
 
     }
+
 }, css.speedSelected);
-      
+
 }).then(() => {
   statsPlayer()
   mainMenu.showMenu()

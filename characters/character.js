@@ -38,7 +38,7 @@ get restart(){
 
 }
 
-export const Elfo = new character (150, 11, 10, ["pocion","pocion","pocion"],"Legolas")
-export const Enano = new character (150, 8, 12,  ["pocion"],"Grim")
-export const Humano = new character (150, 10, 10,  ["pocion","pocion"],"Deckar")
+export const Elfo = new character (100, 11, 9, ["pocion","pocion","pocion"],"Legolas")
+export const Enano = new character (100, 9, 11,  ["pocion"],"Grim")
+export const Humano = new character (100, 10, 10,  ["pocion","pocion"],"Deckar")
 export default character
