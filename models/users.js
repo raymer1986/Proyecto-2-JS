@@ -25,7 +25,7 @@ export function confirmed (){
     do {
         console.clear()
         regex2 = /^(?:Y\b|N\b)/
-        confirmed = prompt(`Confirme su Nombre ${dataUser[0].name} [Y,N] >>`)
+        confirmed = prompt(`Confirme su Nombre ${dataUser[0].name} [Y,N] >>`).toUpperCase()
                 
         if(!regex2.test(confirmed) || confirmed==null){
             console.log("Solo se admite [S/N] :")
