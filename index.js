@@ -1,10 +1,9 @@
-import { LoadGame } from "./config/initialScreen.js";
-import { validateName, confirmed } from "./models/users.js";
-import { config, mainMenu, Personajes, password, escenarios } from "./MainMenu.js";
-import { showColors } from "./models/css.js";
-import { elegirchar } from "./characters/menuchars.js";
-//import { menuChars, humano,elfo,enano} from "./characters/menuchars.js";
-let condition;
+import { LoadGame } from "./models/initialScreen.js";
+import { validateName } from "./config/users.js";
+import { config, mainMenu, Personajes, password} from "./models/MainMenu.js";
+
+
+
 
 async function initGame(){
     //pantalla de carga del juego
@@ -26,4 +25,4 @@ async function initGame(){
 
 
 
-
+    

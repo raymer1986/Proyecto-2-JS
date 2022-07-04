@@ -1,9 +1,9 @@
 import character, { Elfo, Enano, Humano } from "../characters/character.js"
-import { combat } from "../characters/combate.js"
-import { elegirEscenario } from "../characters/escenario.js"
-import { mainMenu,Personajes,config,password} from "../MainMenu.js"
-import { textConsola } from "../models/css.js"
-import { dataUser } from "./dataUser.js"
+import { combat } from "./combate.js"
+import { elegirEscenario } from "../config/escenario.js"
+import { mainMenu,Personajes,config,password} from "../models/MainMenu.js"
+import { textConsola } from "../config/css.js"
+import { dataUser } from "../config/dataUser.js"
 
 
 const code= ["erebus", "raymer"]

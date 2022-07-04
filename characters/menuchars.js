@@ -1,10 +1,7 @@
 
-import { codigo } from "../config/codigos.js";
-import { mainMenu } from "../MainMenu.js"
-import Menu from "../models/menu.js"
-import {character,Elfo,Enano,Humano} from "./character.js"
-import { combat } from "./combate.js";
-import { elegirEscenario } from "./escenario.js";
+import {Elfo,Enano,Humano} from "./character.js"
+import { combat } from "../Controllers/combate.js";
+
 
 
 let condition;

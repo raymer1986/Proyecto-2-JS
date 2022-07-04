@@ -1,5 +1,5 @@
 import { dataUser } from "../config/dataUser.js ";
-// Funcion que valida en Nombre de Usuario (Solo String)
+// Funcion que valida el Nombre de Usuario (Solo String)
 export function validateName(callback){
     let name=""
     let regex,stateValue =""

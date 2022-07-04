@@ -1,4 +1,4 @@
-import { textConsola } from "../models/css.js"
+import { textConsola } from "./css.js"
 
 export const dataUser= [{
     name:"",
