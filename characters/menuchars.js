@@ -21,6 +21,7 @@ export function elegirchar()
         case "1":
             console.clear()
             Elfo.showstats
+            versus.splice(0,1)
             condition =false
             combat(Elfo,versus[aleatorio])
             
@@ -29,6 +30,7 @@ export function elegirchar()
         case "2":
                 console.clear()
                 Enano.showstats
+                versus.splice(1,1)
                 condition =false
                 combat(Enano,versus[aleatorio])
              break;
@@ -36,6 +38,7 @@ export function elegirchar()
         case "3":
                 console.clear()
                 Humano.showstats
+                versus.splice(2,1)
                 condition =false
                 combat(Humano,versus[aleatorio])
                 break;

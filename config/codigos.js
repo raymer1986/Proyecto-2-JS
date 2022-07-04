@@ -18,7 +18,7 @@ const versus = [Elfo,Enano, Humano]
         
         dataUser[0].personajeOculto = codigoValido
 
-        const Mago  = new character (150, 13, 11, ["pocion","pocion","pocion"],"Saruman")
+        const Mago  = new character (100, 13, 11, ["pocion","pocion","pocion"],"Saruman")
 
         console.log(`Codigo Valido\n\nHas desbloquedo a ${Mago.nombre}\n`)
         Mago.showstats
@@ -30,7 +30,6 @@ const versus = [Elfo,Enano, Humano]
                 console.clear()
                 console.log("Juguemos")
                 const aleatorio = Math.floor(Math.random() * (Math.floor(0) - Math.ceil(2) * -1));
-                console.log(aleatorio)
                 elegirEscenario()
                 combat(Mago,versus[aleatorio])
 
